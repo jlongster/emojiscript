@@ -138,8 +138,12 @@ if (!String.prototype.codePointAt) {
     default:
       throw new Error('unimplemented operator: ' + op);
     }
+  }, function(val) {
+    console.log('warning: async behavior not actually implemented. ' +
+                'it would be too much work for a joke.');
+    return val;
   });
-})(function(op) {
+})(function(op, yielded) {
   operator + 12 left { $l, $r } => #{ op($l, $r, '+') }
   operator - 12 left { $l, $r } => #{ op($l, $r, '-') }
   operator < 13 left { $l, $r } => #{ op($l, $r, '<') }
@@ -152,7 +156,9 @@ if (!String.prototype.codePointAt) {
   macro 💧 { rule {} => { 1 } }
 
   macro 🔜 {
-    rule {} => {}
+    rule { $val:expr} => {
+      yielded($val);
+    }
   }
 
   macro 😡 {
