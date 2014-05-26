@@ -1,0 +1,8 @@
+#!/bin/sh
+
+ROOT=`dirname $0`
+"$ROOT/add-runtime.js" $1 > "$ROOT/tmp.js"
+
+"$ROOT/../sweet.js/bin/sjs" "$ROOT/tmp.js"
+
+
