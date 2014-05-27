@@ -1,0 +1,14 @@
+{
+    "name": "emojiscript",
+    "description": "A new kind of programming language with emotional literals and algebra",
+    "version": "1.0.0",
+    "author": "James Long <longster@gmail.com>",
+    "dependencies": {},
+    "engines": {
+        "node": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jlongster/emojiscript.git"
+    }
+}

@@ -6,8 +6,8 @@ macro 💩 {
 }
 
 let == = macro {
-  case { _ } => {
-    throwSyntaxError("== is not allowed");
+  case { $ctx } => {
+    throwSyntaxError("== is not allowed", #{$ctx});
   }
 }
 
