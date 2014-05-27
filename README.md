@@ -6,6 +6,14 @@ most expressive language ever. It is implemented with
 [sweet.js](http://sweetjs.org/) macros (using a fork of it since it
 doesn't natively support emoji...).
 
+cat runtime/runtime.js > out.js && \
+  ./sweet.js/bin/sjs \
+      -m ./macros/poop.js \
+      -m ./macros/async.js \
+      -m ./macros/algebra.js \
+      -m ./macros/error.js \
+      -m ./macros/terminating-cat.js example.js >> out.js
+
 Since it compiles to JavaScript, you get all the features to
 JavaScript in addition to:
 

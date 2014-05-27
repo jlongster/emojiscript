@@ -1,4 +1,3 @@
-/*! http://mths.be/fromcodepoint v0.1.0 by @mathias */
 if (!String.fromCodePoint) {
   (function() {
     var defineProperty = (function() {
@@ -107,98 +106,42 @@ if (!String.prototype.codePointAt) {
   }());
 }
 
-(function(run) {
-  function isEmoji(x) {
-    return typeof x === 'string' &&
-      (x.codePointAt(0) !== x.charCodeAt(0));
-  }
-  
-  run(function(x, y, op) {
-    if(isEmoji(x) || isEmoji(y)) {
-      x = isEmoji(x) ? x.codePointAt(0) : x;
-      y = isEmoji(y) ? y.codePointAt(0) : y;
-      if(op === '+' || op === '-') {
-        return String.fromCodePoint(op === '+' ? x + y : x - y);
-      }
+function _isEmoji(x) {
+  return typeof x === 'string' &&
+    (x.codePointAt(0) !== x.charCodeAt(0));
+}
 
-      // switch comparisons for emoji to make emotional algebra work
-      switch(op) {
-      case '<': op = '>'; break;
-      case '>': op = '<'; break;
-      case '<=': op = '>='; break;
-      case '>=': op = '<='; break;
-      }
+function _op(x, y, op) {
+  if(_isEmoji(x) || _isEmoji(y)) {
+    x = _isEmoji(x) ? x.codePointAt(0) : x;
+    y = _isEmoji(y) ? y.codePointAt(0) : y;
+    if(op === '+' || op === '-') {
+      return String.fromCodePoint(op === '+' ? x + y : x - y);
     }
 
+    // switch comparisons for emoji to make emotional algebra work
     switch(op) {
-    case '<': return x < y;
-    case '>': return x > y;
-    case '<=': return x <= y;
-    case '>=': return x >= y;
-    default:
-      throw new Error('unimplemented operator: ' + op);
-    }
-  }, function(val) {
-    console.log('warning: async behavior not actually implemented. ' +
-                'it would be too much work for a joke.');
-    return val;
-  });
-})(function(op, yielded) {
-  operator + 12 left { $l, $r } => #{ op($l, $r, '+') }
-  operator - 12 left { $l, $r } => #{ op($l, $r, '-') }
-  operator < 13 left { $l, $r } => #{ op($l, $r, '<') }
-  operator > 13 left { $l, $r } => #{ op($l, $r, '>') }
-  operator <= 13 left { $l, $r } => #{ op($l, $r, '<=') }
-  operator >= 13 left { $l, $r } => #{ op($l, $r, '>=') }
-
-  macro 🔥 { rule {} => { 45 } }
-  macro 💥 { rule {} => { 41 } }
-  macro 💧 { rule {} => { 1 } }
-
-  macro 🔜 {
-    rule { $val:expr} => {
-      yielded($val);
+    case '<': op = '>'; break;
+    case '>': op = '<'; break;
+    case '<=': op = '>='; break;
+    case '>=': op = '<='; break;
     }
   }
 
-  macro 😡 {
-    rule { $msg } => {
-      throw new Error($msg)
-    }
+  switch(op) {
+  case '<': return x < y;
+  case '>': return x > y;
+  case '<=': return x <= y;
+  case '>=': return x >= y;
+  case '+': return x + y;
+  case '-': return x - y;
+  default:
+    throw new Error('unimplemented operator: ' + op);
   }
-
-  macro 😸 {
-    rule {} => { ; }
-  }
-
-  macro 💏 {
-    rule {} => {
-      // 👶
-      String.fromCodePoint(128118)
-    }
-  }
-  
-  
-console.log(😄  + 🔥  == 😱 );
-console.log(😄  + 💥  == 😭 );
-console.log(😄  + 💧  == 😅 );
-
-for(var i=0; i<10; i++) {
-  console.log(😄  + i);
 }
 
-console.log(😍  > 😞 );
-console.log(😒  < 😄 );
-
-console.log(💏 );
-
-function asyncFetch() {
-  // could do something async here...
-  return Math.random();
+function _yielded(val) {
+  console.log('warning: async behavior not actually implemented. ' +
+              'it would be too much work for a joke.');
+  return val;
 }
-
-var val = 🔜 asyncFetch();
-console.log(val);
-
-});
-

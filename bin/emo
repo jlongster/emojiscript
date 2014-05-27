@@ -1,8 +1,12 @@
 #!/bin/sh
 
 ROOT=`dirname $0`
-"$ROOT/add-runtime.js" $1 > "$ROOT/tmp.js"
+TMP="$ROOT/tmp.js"
 
-"$ROOT/../sweet.js/bin/sjs" "$ROOT/tmp.js"
-
-
+cat "$ROOT/../runtime/runtime.js"
+"$ROOT/../sweet.js/bin/sjs" \
+    -m ./macros/poop.js \
+    -m ./macros/async.js \
+    -m ./macros/algebra.js \
+    -m ./macros/error.js \
+    -m ./macros/terminating-cat.js "$1"
