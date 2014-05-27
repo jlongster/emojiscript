@@ -1,4 +1,6 @@
 
 macro 😸 {
-  rule {} => { ; }
+  rule { } => { ; }
 }
+
+export 😸 ;

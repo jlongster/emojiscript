@@ -1024,7 +1024,7 @@ parseYieldExpression: true
         var codePoint = source.codePointAt(index);
         if(codePoint !== source.charCodeAt(index) &&
            codePoint >= 128516 &&
-           codePoint <= 128576) {
+           codePoint <= 128567) {
             index++;
             index++;
             return {
@@ -1437,7 +1437,7 @@ parseYieldExpression: true
         if (ch === 39 || ch === 34 ||
             (codePoint !== source.charCodeAt(index) &&
              codePoint >= 128516 &&
-             codePoint <= 128576)) {
+             codePoint <= 128567)) {
             return scanStringLiteral();
         }
         if (ch === 96) {
