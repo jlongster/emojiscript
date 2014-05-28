@@ -4,7 +4,7 @@ ROOT=`dirname $0`
 TMP="$ROOT/tmp.js"
 
 cat "$ROOT/../runtime/runtime.js"
-"$ROOT/../sweet.js/bin/sjs" \
+"$ROOT/../node_modules/.bin/sjs" \
     -m "$ROOT/../macros/poop.js" \
     -m "$ROOT/../macros/async.js" \
     -m "$ROOT/../macros/algebra.js" \

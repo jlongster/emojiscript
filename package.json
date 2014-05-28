@@ -3,7 +3,9 @@
     "description": "A new kind of programming language with emotional literals and algebra",
     "version": "1.0.2",
     "author": "James Long <longster@gmail.com>",
-    "dependencies": {},
+    "dependencies": {
+      "sweet.js": "git://github.com/jlongster/sweet.js.git#master"
+    },
     "bin": {
         "emo": "./bin/emo"
     },
