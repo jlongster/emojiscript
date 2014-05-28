@@ -5,8 +5,8 @@ TMP="$ROOT/tmp.js"
 
 cat "$ROOT/../runtime/runtime.js"
 "$ROOT/../sweet.js/bin/sjs" \
-    -m ./macros/poop.js \
-    -m ./macros/async.js \
-    -m ./macros/algebra.js \
-    -m ./macros/error.js \
-    -m ./macros/terminating-cat.js "$1"
+    -m "$ROOT/../macros/poop.js" \
+    -m "$ROOT/../macros/async.js" \
+    -m "$ROOT/../macros/algebra.js" \
+    -m "$ROOT/../macros/error.js" \
+    -m "$ROOT/../macros/terminating-cat.js" "$1"
