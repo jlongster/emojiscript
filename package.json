@@ -1,7 +1,7 @@
 {
     "name": "emojiscript",
     "description": "A new kind of programming language with emotional literals and algebra",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "James Long <longster@gmail.com>",
     "dependencies": {
       "sweet.js": "git://github.com/jlongster/sweet.js.git#master"
