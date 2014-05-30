@@ -7,8 +7,11 @@ most expressive language ever. It is implemented with
 doesn't natively support emoji...).
 
 ```
-./bin/emo example.js
+$ npm install emojiscript
+$ emo file.js
 ```
+
+The file `example.js` has example code.
 
 EmojiScript is just a set of [sweet.js](http://sweetjs.org/) macros,
 so you can use them individually if you want:
