@@ -92,3 +92,22 @@ if(user < 😄 ) {
   😡 "be happy"😸
 }
 ```
+
+## Can't see all the Emoji?
+
+Ubuntu and other Debian-based systems:
+```
+sudo apt-get install ttf-ancient-fonts
+```
+
+Fedora:
+```
+sudo yum install gdouros-symbola-fonts
+```
+
+Other Linux distros:
+```
+mkdir -p ~/.fonts
+cd ~/.fonts
+wget http://users.teilar.gr/~g1951d/Symbola.ttf
+```
