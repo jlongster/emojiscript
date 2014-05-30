@@ -10,7 +10,6 @@ echo "$ROOT/../macros/poop.js"
 cat "$ROOT/../runtime/runtime.js"
 "$ROOT/../node_modules/sweet.js/bin/sjs" \
     -m "./$ROOT/../macros/poop.js" \
-    -m "./$ROOT/../macros/async.js" \
     -m "./$ROOT/../macros/algebra.js" \
     -m "./$ROOT/../macros/error.js" \
     -m "./$ROOT/../macros/terminating-cat.js" "$1"
