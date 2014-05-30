@@ -1,7 +1,7 @@
 
 # EmojiScript
 
-EmojiScript features emotion as a value. Use emotion literals with the
+EmojiScript is an extension of JavaScript that features emotion as a value. Use emotion literals with the
 most expressive language ever. It is implemented with
 [sweet.js](http://sweetjs.org/) macros (using a fork of it since it
 doesn't natively support emoji...).
